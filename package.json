@@ -1,13 +1,11 @@
 {
-  "name": "mechunk",
-  "version": "1.0.0",
+  "private": true,
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
     "build": "tsc",
     "dev": "tsc --watch"
   },
-  "author": "",
   "license": "MIT",
   "devDependencies": {
     "@types/benchmark": "^1.0.31",
