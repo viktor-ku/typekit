@@ -4,8 +4,7 @@
     "target": "esnext",
     "module": "commonjs",
     "strict": true,
-    "baseUrl": ".",
-    "sourceMap": true
+    "baseUrl": "."
   },
   "exclude": [
     "node_modules",
