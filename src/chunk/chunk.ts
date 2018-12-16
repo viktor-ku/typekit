@@ -1,23 +1,18 @@
-export function chunk(input: any[], size?: any, _?: any): any[][] {
+export function chunk(input: any[], size?: any, collection?: any[]): any[][] {
   const arr: any[] = []
 
-  if (_) {
+  if (size === undefined || collection) {
     size = 1
   }
 
-  if (size >= 2) {
-    size = Math.floor(size)
+  size = Math.floor(size)
 
+  if (size >= 1) {
     for (let i = 0, len = input.length; i < len; i += size) {
       const end = i + size
 
       arr.push(input.slice(i, end))
     }
-  } else if (
-    (size === undefined) ||
-    (size >= 1 && size < 2)
-  ) {
-    return input.map((item) => [item])
   }
 
   return arr
