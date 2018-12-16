@@ -60,10 +60,10 @@ describe('chunk', () => {
     })
 
     test('should treat falsey `size` values, except `undefined`, as `0`', () => {
-      const values = falsey.filter((size) => size !== undefined)
+      const withoutUndefined = falsey.filter((size) => size !== undefined)
 
-      const actual = values.map((size) => chunk(arr, size))
-      const expected = values.map((size) => [])
+      const actual = withoutUndefined.map((size) => chunk(arr, size))
+      const expected = withoutUndefined.map(() => [])
 
       expect(actual).toEqual(expected)
     })

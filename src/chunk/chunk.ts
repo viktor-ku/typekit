@@ -1,4 +1,4 @@
-export function chunk(input: any[], size?: any, collection?: any[]): any[][] {
+export function chunk(input: any[], size?: number, collection?: any[]): any[][] {
   const arr: any[] = []
 
   if (size === undefined || collection) {
