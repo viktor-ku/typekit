@@ -2,16 +2,11 @@ import {
   chunk as lodashChunk,
   map as lodashMap,
 } from 'lodash'
+import { match } from '../internal/match'
 import { chunk } from './chunk'
 
 const arr = [0, 1, 2, 3, 4, 5]
 const falsey = [null, undefined, false, 0, NaN, '']
-
-function match(actual: any, ...expected: any[]) {
-  expected.forEach((ex) => {
-    expect(actual).toEqual(ex)
-  })
-}
 
 describe('chunk', () => {
   describe('valid size', () => {
