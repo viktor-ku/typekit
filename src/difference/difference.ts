@@ -3,7 +3,7 @@ export function difference(array: any[], ...values: any[][]): any[] {
     return []
   }
 
-  const memo = new Set([...array])
+  const memo = new Set(array)
 
   for (const value of values) {
     if (!Array.isArray(value)) {
