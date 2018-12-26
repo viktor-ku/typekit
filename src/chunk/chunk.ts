@@ -1,5 +1,5 @@
-export function chunk(input: any[], size?: number, collection?: any[]): any[][] {
-  const arr: any[] = []
+export function chunk<T>(input: T[], size?: number, collection?: any[]): T[][] {
+  const arr = []
 
   if (size === undefined || collection) {
     size = 1
