@@ -1,5 +1,17 @@
+function slice<T>(input: T[], start: number, size: number): T[] {
+  const arr: T[] = new Array(size)
+  let n = 0
+
+  while (n < size) {
+    arr[n] = input[start + n]
+    n++
+  }
+
+  return arr
+}
+
 export function chunk<T>(input: T[], size?: number, collection?: any[]): T[][] {
-  const arr = []
+  const arr: T[][] = []
 
   if (size === undefined || collection) {
     size = 1
@@ -8,10 +20,16 @@ export function chunk<T>(input: T[], size?: number, collection?: any[]): T[][] {
   size = Math.floor(size)
 
   if (size >= 1) {
-    for (let i = 0, len = input.length; i < len; i += size) {
-      const end = i + size
+    let i = 0
+    const len = input.length
 
-      arr.push(input.slice(i, end))
+    while (i < len - size) {
+      arr.push(slice(input, i, size))
+      i += size
+    }
+
+    if (len - i > 0) {
+      arr.push(slice(input, i, len - i))
     }
   }
 
