@@ -30,9 +30,11 @@ export function chunk<T>(input: T[], size?: number, collection?: any[]): T[][] {
       i += size
     }
 
+    const lastChunkSize = len - i
+
     // Push last slice (if there is one) that can be either full or partial
-    if (len - i > 0) {
-      arr.push(slice(input, i, len - i))
+    if (lastChunkSize > 0) {
+      arr.push(slice(input, i, lastChunkSize))
     }
   }
 
