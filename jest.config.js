@@ -9,6 +9,9 @@ module.exports = {
     "ts",
     "js"
   ],
+  moduleNameMapper: {
+    "@/(.*)": "<rootDir>/internal/$1"
+  },
   testEnvironment: "node",
   testMatch: [
     "**/src/**/*.spec.ts",

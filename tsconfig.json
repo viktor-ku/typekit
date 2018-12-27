@@ -4,7 +4,12 @@
     "target": "esnext",
     "module": "commonjs",
     "strict": true,
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./internal/*"
+      ]
+    }
   },
   "exclude": [
     "node_modules",

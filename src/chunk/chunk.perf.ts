@@ -1,5 +1,5 @@
+import { Perf } from '@/Perf'
 import { chunk as lodashChunk } from 'lodash'
-import { Perf } from '../internal/Perf'
 import { chunk } from './chunk'
 
 const arr = Array(16).fill(0)

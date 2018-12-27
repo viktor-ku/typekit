@@ -1,5 +1,5 @@
+import { match } from '@/match'
 import * as _ from 'lodash'
-import { match } from '../internal/match'
 import { difference } from './difference'
 
 const LARGE_ARRAY_SIZE = 200

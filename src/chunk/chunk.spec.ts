@@ -1,8 +1,5 @@
-import {
-  chunk as lodashChunk,
-  map as lodashMap,
-} from 'lodash'
-import { match } from '../internal/match'
+import { match } from '@/match'
+import { chunk as lodashChunk, map as lodashMap } from 'lodash'
 import { chunk } from './chunk'
 
 const arr = [0, 1, 2, 3, 4, 5]

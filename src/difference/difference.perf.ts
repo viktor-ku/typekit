@@ -1,5 +1,5 @@
+import { Perf } from '@/Perf'
 import { difference as lodashDifference } from 'lodash'
-import { Perf } from '../internal/Perf'
 import { difference } from './difference'
 
 const a = [, 1, 2, 3, 4, 3, 2, 4, 3, 4, 5, 4, 5]

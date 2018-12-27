@@ -2,9 +2,7 @@
   "private": true,
   "scripts": {
     "test": "jest",
-    "test:watch": "jest --watch",
-    "build": "tsc",
-    "dev": "tsc --watch"
+    "perf": "ts-node -r tsconfig-paths/register"
   },
   "license": "MIT",
   "devDependencies": {
@@ -23,6 +21,7 @@
     "ora": "^3.0.0",
     "ts-jest": "^23.10.5",
     "ts-node": "^7.0.1",
+    "tsconfig-paths": "^3.7.0",
     "tslint": "^5.11.0",
     "typescript": "^3.2.2"
   }
