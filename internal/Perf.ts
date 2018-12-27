@@ -54,11 +54,9 @@ function about() {
 }
 
 export class Perf {
-  private suite = new Benchmark.Suite(this.name).on('cycle', (e: Benchmark.Event) => {
-    console.log(
-      chalk.bold(color.primary.bold('>')),
-      e.target.toString(),
-    )
+  private suite = new Benchmark.Suite(this.name, {
+    minSamples: 1024,
+    initCount: 1024,
   })
 
   constructor(private name: string) {
@@ -96,6 +94,12 @@ export class Perf {
   public run() {
     this.suite
       .run({ async: true })
+      .on('cycle', (e: Benchmark.Event) => {
+        console.log(
+          chalk.bold(color.primary.bold('>')),
+          e.target.toString(),
+        )
+      })
       .on('complete', (e: Benchmark.Event) => {
         const res = Object
           .entries(e.currentTarget)
