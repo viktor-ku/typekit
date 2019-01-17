@@ -1,21 +1,21 @@
-export function difference(array: any[], ...values: any[][]): any[] {
-  if (!Array.isArray(array)) {
+const isArray = Array.isArray
+
+export function difference<T = any>(input: T[], ...values: T[][]): T[] {
+  if (!isArray(input)) {
     return []
   }
 
-  const memo = new Set(array)
+  const set = new Set(input)
 
   for (const value of values) {
-    if (!Array.isArray(value)) {
+    if (!isArray(value)) {
       continue
     }
 
     for (const n of value) {
-      if (memo.has(n)) {
-        memo.delete(n)
-      }
+      set.delete(n)
     }
   }
 
-  return [...memo]
+  return [...set]
 }
