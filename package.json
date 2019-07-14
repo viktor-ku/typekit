@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "test": "ava",
-    "perf": "ts-node -r tsconfig-paths/register"
+    "perf": "./scripts/perf.sh"
   },
   "license": "MIT",
   "devDependencies": {
