@@ -4,27 +4,23 @@ function slice<T>(input: T[], start: number, size: number): T[] {
 
   while (n < size) {
     arr[n] = input[start + n]
-    n++
+    n += 1
   }
 
   return arr
 }
 
-export function chunk<T>(input: T[], size?: number, collection?: any[]): T[][] {
+export function chunk<T>(input: T[], size: number): T[][] {
   const arr: T[][] = []
 
-  if (size === undefined || collection) {
-    size = 1
-  }
-
-  size = Math.floor(size)
+  if (typeof size !== 'number')
+    throw new Error('`size` should be of type `number`')
 
   if (size >= 1) {
     let i = 0
     const len = input.length
     const withoutLast = len - size
 
-    // Push full slices
     while (i < withoutLast) {
       arr.push(slice(input, i, size))
       i += size
@@ -32,10 +28,8 @@ export function chunk<T>(input: T[], size?: number, collection?: any[]): T[][] {
 
     const lastChunkSize = len - i
 
-    // Push last slice (if there is one) that can be either full or partial
-    if (lastChunkSize > 0) {
+    if (lastChunkSize > 0)
       arr.push(slice(input, i, lastChunkSize))
-    }
   }
 
   return arr
