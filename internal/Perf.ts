@@ -1,10 +1,10 @@
 // tslint:disable no-console
 
-import * as Benchmark from 'benchmark'
+import Benchmark from 'benchmark'
 import chalk from 'chalk'
-import * as filesize from 'filesize'
-import * as ora from 'ora'
-import * as os from 'os'
+import filesize from 'filesize'
+import ora from 'ora'
+import os from 'os'
 
 const color = {
   primary: chalk.blue,
