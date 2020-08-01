@@ -47,6 +47,6 @@ it('should work with big array', t => {
   it(`should throw an error if 'size' is ${name}`, t => {
     t.throws(() => {
       chunk([0], size)
-    }, '`size` should be of type `number`')
+    }, null, '`size` should be of type `number`')
   })
 })
